@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 		puts("Give me something, darling! I want to eat)");
 	line = NULL;
 	fd = open(argv[1], O_RDONLY);
-	while(get_next_line(fd, &line))
+	get_next_line(fd, &line);
 		printf("%s\n",line);
 	free(line);
 	close(fd);
