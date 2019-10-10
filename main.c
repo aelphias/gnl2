@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 	char *line;
 
 	if (argc != 2)
-		puts("Give me something, darling! I want to eat ;)");
+		puts("Give me something, darling! I want to eat)");
 	line = NULL;
 	fd = open(argv[1], O_RDONLY);
 	while(get_next_line(fd, &line))
