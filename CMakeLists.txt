@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.14)
+project(Get_Next_Line)
+set(CMAKE_C_STANDARD 99)
+include_directories(libft)
+add_executable(Get_Next_Line main.c get_next_line.c get_next_line.h)
+add_subdirectory(libft)
+target_link_libraries(Get_Next_Line libft)
+target_compile_options(Get_Next_Line PRIVATE -Wall -Wextra -Werror)
