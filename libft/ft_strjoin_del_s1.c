@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_strjoin_del_s1(char  *s1, char const *s2)
+char	*ft_strjoin_del_s1(char *s1, char const *s2)
 {
 	char	*rslt;
 	size_t	len;
@@ -27,5 +27,3 @@ char	*ft_strjoin_del_s1(char  *s1, char const *s2)
 	ft_strdel(&s1);
 	return (rslt);
 }
-
-
