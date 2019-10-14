@@ -6,51 +6,36 @@
 /*   By: aelphias <aelphias@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/30 14:25:00 by aelphias          #+#    #+#             */
-/*   Updated: 2019/10/14 15:16:17 by aelphias         ###   ########.fr       */
+/*   Updated: 2019/10/14 21:07:33 by aelphias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-void	ft_cut(char *left, char **line)
-{
-	char	*pos;
-
-	pos = ft_strchr(left,'\n');
-	*pos = '\0';
-	*line = ft_strdup(left);
-	left = ft_strdup(pos + 1);
-	free(left);
-	free(pos);
-}
-
 int	get_next_line(const int fd, char **line)
 {
-
 	char		b[BUFF_SIZE + 1];
 	static char *left;
+	char		*pos;
+	char 		*tmp;
 	int 		ret;
 
-	if (fd < 0)
-		return (-1);
- 	ft_bzero(b, BUFF_SIZE + 1);
-	ret = 0;
-	if (left)
-		if (ft_strchr(left,'\n'))
-			ft_cut(left, line);
+	if (!left)
+		left = ft_strnew(1);
 	while ((ret = read(fd, b, BUFF_SIZE)))
 	{
-		b[ret] = '\0';
-		if (left)
-			left = ft_strjoin(left, b);
+		if ((pos = ft_strchr(b, '\0')))
+		{
+			*pos = '\0';
+			*line = ft_strdup(b);
+			pos++;
+			left = ft_strjoin(left, pos);
+		}
 		else
-			left = strdup(b);
-		if (ft_strchr(left,'\n'))
-			ft_cut(left, line);
-		break;
+		{
+			left = ft_strjoin(left, b);
+		}
+
 	}
-	while (ft_strlen(*line) && line)
-		ft_cut(left, line);
-		if (ret == 0 && ft_strlen(*line) == 0)
-		return (0);
+	return (0);
 }

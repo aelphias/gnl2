@@ -8,7 +8,6 @@ include_directories(libft)
 
 add_executable(gnl_Work
 		libft/author
-		libft/CMakeLists.txt
 		libft/ft_atoi.c
 		libft/ft_bzero.c
 		libft/ft_isalnum.c
@@ -65,11 +64,5 @@ add_executable(gnl_Work
 		libft/libft.a
 		libft/libft.h
 		libft/Makefile
-		13000
-		char
-		CMakeLists.txt
-		few_short_lines
 		get_next_line.c
-		get_next_line.h
-		long_line
 		main.c)
