@@ -6,7 +6,7 @@
 /*   By: aelphias <aelphias@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/30 14:25:00 by aelphias          #+#    #+#             */
-/*   Updated: 2019/10/15 13:14:12 by aelphias         ###   ########.fr       */
+/*   Updated: 2019/10/15 16:57:55 by aelphias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,46 +14,31 @@
 
 int	get_next_line(const int fd, char **line)
 {
-	char		b[BUFF_SIZE + 1];
 	static char *left;
 	char		*pos;
 	char 		*tmp;
+	char		b[BUFF_SIZE + 1];
 	int 		ret;
+	int 		flg;
 
-	if (left)
-	{
-		if ((pos = ft_strchr(left, '\n')))
-		{
-			*pos = '\0';
-			*line = ft_strdup(left);
-			if ((pos = pos + 1))
-				left = ft_strdup(pos);
-			return (1);
-		}
-	}
+	if (line)
+		*line = ft_strnew(1);
+	if (!left)
+		left = ft_strnew(0);
 	else
-		left = ft_strnew(1);
+		*line = ft_strdup(left);
 	while ((ret = read(fd, b, BUFF_SIZE)))
 	{
 		b[ret] = '\0';
-		tmp = ft_strdup(b);
-		if ((pos = ft_strchr(tmp, '\n')))
+		if ((pos = ft_strchr(b, '\n')))
 		{
-			*pos = '\0';
-			*line = ft_strdup(tmp);
-			if ((pos = pos + 1))
-				left = ft_strdup(pos);
-			free(tmp);
+			*line = ft_strjoin(left, b);
+			pos++;
+			left = ft_strdup(pos);
 			return (1);
 		}
 		else
-			left = ft_strjoin(left, tmp);
-		free(tmp);
-	}
-	if (ret == 0)
-	{
-		*line = ft_strdup(left);
-		ft_bzero(left, ft_strlen(left));
+			left = ft_strjoin(left, b);
 	}
 	return (0);
 }
