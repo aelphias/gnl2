@@ -6,7 +6,7 @@
 /*   By: aelphias <aelphias@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/30 14:39:20 by aelphias          #+#    #+#             */
-/*   Updated: 2019/10/14 20:51:47 by aelphias         ###   ########.fr       */
+/*   Updated: 2019/10/15 13:07:13 by aelphias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ int	main(int argc, char **argv)
 		free(line);
 	}*/
 
-	get_next_line(fd, &line);
-	printf("%s\n",line);
 /*	get_next_line(fd, &line);
 	printf("%s\n",line);*/
+	get_next_line(fd, &line);
+	printf("%s",line);
 	/*while (get_next_line(fd, &line))
 	{
 		printf("%s\n",line);
