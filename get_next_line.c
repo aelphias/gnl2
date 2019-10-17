@@ -6,7 +6,7 @@
 /*   By: aelphias <aelphias@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/30 14:25:00 by aelphias          #+#    #+#             */
-/*   Updated: 2019/10/16 18:01:14 by aelphias         ###   ########.fr       */
+/*   Updated: 2019/10/17 13:58:56 by aelphias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,10 @@ int	get_next_line(const int fd, char **line)
 	int 		ret;
 	int 		flg;
 
-	flg = 1;
-	*line = ft_strnew(1);
-	while ((flg && (ret = read(fd, b, BUFF_SIZE))))
+	while ((ret = read(fd, b, BUFF_SIZE)))
 	{
 		b[ret] = '\0';
-		flg = 0;
+		*line = ft_strjoin(*line, b);
 	}
-	*line = ft_strdup(b);
 	return (0);
 }
