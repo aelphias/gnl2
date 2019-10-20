@@ -6,7 +6,7 @@
 /*   By: aelphias <aelphias@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/26 13:49:44 by aelphias          #+#    #+#             */
-/*   Updated: 2019/09/26 15:41:46 by aelphias         ###   ########.fr       */
+/*   Updated: 2019/10/20 19:16:46 by aelphias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strchr(const char *s, int c)
 	char	*ss;
 	size_t	i;
 
+	if(!s)
+		return (NULL);
 	i = 0;
 	cc = (char)c;
 	ss = (char *)s;
