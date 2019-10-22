@@ -6,33 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/Users/aelphias/gnl_Work/get_next_line.c
-get_next_line.h
-/Users/aelphias/gnl_Work/get_next_line.h
-
-/Users/aelphias/gnl_Work/get_next_line.h
+/Users/aelphias/current_gnl_bonus/get_next_line.h
 libft/libft.h
-/Users/aelphias/gnl_Work/libft/libft.h
-unistd.h
--
+/Users/aelphias/current_gnl_bonus/libft/libft.h
 stdlib.h
 -
 fcntl.h
 -
 
-/Users/aelphias/gnl_Work/libft/libft.h
+/Users/aelphias/current_gnl_bonus/libft/libft.h
 string.h
--
-unistd.h
 -
 stdio.h
 -
 stdlib.h
 -
+unistd.h
+-
 fcntl.h
 -
 
-/Users/aelphias/gnl_Work/main.c
+/Users/aelphias/current_gnl_bonus/main.c
 get_next_line.h
-/Users/aelphias/gnl_Work/get_next_line.h
+/Users/aelphias/current_gnl_bonus/get_next_line.h
 

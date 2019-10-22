@@ -6,5 +6,5 @@ C_FLAGS = -g
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/aelphias/gnl_Work/. -I/Users/aelphias/gnl_Work/libft 
+C_INCLUDES = -I/Users/aelphias/current_gnl_bonus/. -I/Users/aelphias/current_gnl_bonus/libft 
 
