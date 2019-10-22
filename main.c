@@ -16,19 +16,14 @@ int	main(int argc, char **argv)
 {
 	char *line;
 	int fd1;
-	//int fd2;
 
 	line = NULL;
-	if (argc != 2)
-		puts("Give me something, darling! I want to work)");
 	fd1 = open(argv[1], O_RDONLY);
-	//fd2 = open(argv[2], O_RDONLY);
 	while (get_next_line(fd1, &line))
 	{
 		printf("%s\n", line);
 		ft_memdel((void **)&line);
 	}
 	close(fd1);
-	//close(fd2);
 	return (0);
 }
