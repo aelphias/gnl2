@@ -6,18 +6,18 @@
 /*   By: aelphias <aelphias@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/30 14:25:00 by aelphias          #+#    #+#             */
-/*   Updated: 2019/10/21 20:11:03 by aelphias         ###   ########.fr       */
+/*   Updated: 2019/10/21 20:30:07 by aelphias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	ft_check(char **line, char **left)
+int	ft_check(char **line, char **left, int fd)
 {
 	char *pos;
 	char *tmp;
 
-	tmp = *left;
+	tmp = *left[fd];
 	if ((pos = ft_strchr(tmp, '\n')))
 	{
 		*pos = '\0';
@@ -33,28 +33,28 @@ int	ft_check(char **line, char **left)
 
 int	get_next_line(const int fd, char **line)
 {
-	static char *left;
+	static char left[11000];
 	char		b[BUFF_SIZE + 1];
 	int			ret;
 
 	if (!line || fd < 0 || read(fd, b, 0) < 0)
 		return (-1);
-	if (left && ft_strchr(left, '\n'))
-		return (ft_check(line, &left));
+	if (left[fd] && ft_strchr(&left[fd], '\n'))
+		return (ft_check(line, &left[fd],fd));
 	while ((ret = read(fd, b, BUFF_SIZE)))
 	{
 		b[ret] = '\0';
-		if (!left)
-			left = ft_strdup(b);
+		if (!left[fd])
+			left[fd] = ft_strdup(b);
 		else
-			left = ft_strjoin(left, b);
-		if (ft_check(line, &left))
+			left[fd] = ft_strjoin(left, b);
+		if (ft_check(line, &left[fd],fd))
 			return (1);
 	}
-	if (left)
+	if (left[fd])
 	{
 		*line = ft_strdup(left);
-		left = NULL;
+		left[fd] = NULL;
 		return (1);
 	}
 	return (0);
