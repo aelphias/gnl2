@@ -18,7 +18,7 @@ char	*ft_strchr(const char *s, int c)
 	char	*ss;
 	size_t	i;
 
-	if(!s)
+	if (!s)
 		return (NULL);
 	i = 0;
 	cc = (char)c;
