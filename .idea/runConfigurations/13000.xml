@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="13000" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="13000" WORKING_DIR="file://$PROJECT_DIR$/../gnl_Work" PASS_PARENT_ENVS_2="true" PROJECT_NAME="gnl_Work" TARGET_NAME="gnl_Work" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="gnl_Work" RUN_TARGET_NAME="gnl_Work">
+    <method v="2">
+      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+</component>

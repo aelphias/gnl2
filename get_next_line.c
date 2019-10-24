@@ -25,6 +25,7 @@ int	ft_check(char **line, char **left)
 		pos++;
 		free(*left);
 		*left = ft_strdup(pos);
+	//	free(tmp);
 		return (1);
 	}
 	else
@@ -47,7 +48,7 @@ int	get_next_line(const int fd, char **line)
 		b[ret] = '\0';
 		if (!left)
 		{
-			free(left);
+			//free(left);
 			left = ft_strdup(b);
 			ft_bzero(&b, BUFF_SIZE + 1);
 		}

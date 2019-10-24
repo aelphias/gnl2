@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/aelphias/current_gnl_no_bonus1/get_next_line.h
+libft/libft.h
+/Users/aelphias/current_gnl_no_bonus1/libft/libft.h
+unistd.h
+-
+stdlib.h
+-
+fcntl.h
+-
+
+/Users/aelphias/current_gnl_no_bonus1/libft/libft.h
+string.h
+-
+unistd.h
+-
+stdio.h
+-
+stdlib.h
+-
+fcntl.h
+-
+
+/Users/aelphias/current_gnl_no_bonus1/main.c
+get_next_line.h
+/Users/aelphias/current_gnl_no_bonus1/get_next_line.h
+

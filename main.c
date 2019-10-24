@@ -6,7 +6,7 @@
 /*   By: aelphias <aelphias@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/30 14:39:20 by aelphias          #+#    #+#             */
-/*   Updated: 2019/10/23 14:20:05 by aelphias         ###   ########.fr       */
+/*   Updated: 2019/10/24 14:24:44 by aelphias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,25 @@
 int	main(int argc, char **argv)
 {
 	char	*line;
-	int		fd1;
+	int		fd;
+	int 	i;
 
+	i = 0;
 	if (argc < 2)
-		ft_putstr("no arguments supplied, try again\n");
+		return (-1);
 	line = NULL;
-	fd1 = open(argv[1], O_RDONLY);
-	while (get_next_line(fd1, &line))
+	fd = open(argv[1], O_RDONLY);
+/*	while (get_next_line(fd, &line))
 	{
 		printf("%s\n", line);
-		ft_memdel((void **)&line);
-	}
-	close(fd1);
+		free(line);
+	}*/
+while (i++ < 6)
+{
+	get_next_line(fd, &line);
+	printf("%s\n", line);
+	free(line);
+}
+	close(fd);
 	return (0);
 }
