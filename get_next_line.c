@@ -12,20 +12,20 @@
 
 #include "get_next_line.h"
 
-int	ft_check(char **line, char **left)
+int	ft_check(char **line, int fd, char *left[MAX_FD_NUM])
 {
 	char *pos;
 	char *tmp;
 
-	tmp = *left;
+	tmp = ft_strdup(left[fd]);
 	if ((pos = ft_strchr(tmp, '\n')))
 	{
 		*pos = '\0';
 		*line = ft_strdup(tmp);
 		pos++;
-		free(*left);
-		*left = ft_strdup(pos);
-	//	free(tmp);
+		left[fd] = ft_strdup(pos);
+		//free(left[fd]);
+			free(tmp);
 		return (1);
 	}
 	else
@@ -34,38 +34,34 @@ int	ft_check(char **line, char **left)
 
 int	get_next_line(const int fd, char **line)
 {
-	static char *left;
+	static char *left[MAX_FD_NUM];
 	char		*tmp;
 	char		b[BUFF_SIZE + 1];
 	int			ret;
 
-	if (!line || fd < 0 || read(fd, b, 0) < 0)
+	if (!line || fd < 0 || fd > 11000|| read(fd, NULL, 0) < 0)
 		return (-1);
-	if (left && ft_strchr(left, '\n'))
-		return (ft_check(line, &left));
+	if (left[fd] && ft_strchr(left[fd], '\n'))
+		return (ft_check(line, fd, left));
 	while ((ret = read(fd, b, BUFF_SIZE)))
 	{
 		b[ret] = '\0';
-		if (!left)
-		{
-			//free(left);
-			left = ft_strdup(b);
-			ft_bzero(&b, BUFF_SIZE + 1);
-		}
+		if (left[fd] == NULL)
+			left[fd] = ft_strdup(b);
 		else
 		{
-			tmp = left;
-			left = ft_strjoin(left, b);
+			tmp = left[fd];
+			left[fd] = ft_strjoin(left[fd], b);
 			free(tmp);
 		}
-		if (ft_check(line, &left))
+		if (ft_check(line, fd, left))
 			return (1);
 	}
-	if (left)
+	if (left[fd])
 	{
-		*line = ft_strdup(left);
-		free(left);
-		left = NULL;
+		*line = ft_strdup(left[fd]);
+		free(left[fd]);
+		left[fd] = NULL;
 		return (1);
 	}
 	return (0);

@@ -23,17 +23,20 @@ int	main(int argc, char **argv)
 		return (-1);
 	line = NULL;
 	fd = open(argv[1], O_RDONLY);
-/*	while (get_next_line(fd, &line))
+	while (get_next_line(fd, &line))
 	{
 		printf("%s\n", line);
 		free(line);
-	}*/
-while (i++ < 6)
+		i++;
+	}
+	printf("{ %i }\n",i);
+
+/*while (i++ < 1)
 {
 	get_next_line(fd, &line);
 	printf("%s\n", line);
 	free(line);
-}
+}*/
 	close(fd);
 	return (0);
 }
