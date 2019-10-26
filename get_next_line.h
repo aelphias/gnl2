@@ -13,7 +13,7 @@
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 # define BUFF_SIZE 100
-# define MAX_FD_NUM 4864
+# define MAX_FD_NUM 11000
 # include "libft/libft.h"
 # include <unistd.h>
 # include <stdlib.h>

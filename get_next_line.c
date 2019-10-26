@@ -6,7 +6,7 @@
 /*   By: aelphias <aelphias@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/30 14:25:00 by aelphias          #+#    #+#             */
-/*   Updated: 2019/10/23 16:22:24 by aelphias         ###   ########.fr       */
+/*   Updated: 2019/10/24 21:51:24 by aelphias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,23 @@ int	ft_check(char **line, int fd, char *left[MAX_FD_NUM])
 		*pos = '\0';
 		*line = ft_strdup(tmp);
 		pos++;
-		left[fd] = ft_strdup(pos);
-		//free(left[fd]);
+		if (*pos == '\0')
+		{
+			free(left[fd]);
+			left[fd] = NULL;
 			free(tmp);
+			return (1);
+		}
+		left[fd] = ft_strdup(pos);
+		free(tmp);
 		return (1);
 	}
 	else
-		return (0);
+		{
+			free(tmp);
+			return (0);
+		}
+
 }
 
 int	get_next_line(const int fd, char **line)
@@ -39,7 +49,7 @@ int	get_next_line(const int fd, char **line)
 	char		b[BUFF_SIZE + 1];
 	int			ret;
 
-	if (!line || fd < 0 || fd > 11000|| read(fd, NULL, 0) < 0)
+	if (!line || fd < 0 || fd > 11000 || read(fd, NULL, 0) < 0)
 		return (-1);
 	if (left[fd] && ft_strchr(left[fd], '\n'))
 		return (ft_check(line, fd, left));
