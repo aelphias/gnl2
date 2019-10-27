@@ -1,0 +1,4 @@
+#!/bin/bash
+
+g -g get_next_line.c libft/libft.a main.c
+valgrind -s --leak-check=full --show-leak-kinds=all ./a.out 13000

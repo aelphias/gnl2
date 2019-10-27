@@ -1581,32 +1581,32 @@ libft/ft_toupper.c.s:
 	$(MAKE) -f CMakeFiles/gnl_Work.dir/build.make CMakeFiles/gnl_Work.dir/libft/ft_toupper.c.s
 .PHONY : libft/ft_toupper.c.s
 
-main.o: main.c.o
+main_single_fd.o: main_single_fd.c.o
 
-.PHONY : main.o
+.PHONY : main_single_fd.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/gnl_Work.dir/build.make CMakeFiles/gnl_Work.dir/main.c.o
-.PHONY : main.c.o
+main_single_fd.c.o:
+	$(MAKE) -f CMakeFiles/gnl_Work.dir/build.make CMakeFiles/gnl_Work.dir/main_single_fd.c.o
+.PHONY : main_single_fd.c.o
 
-main.i: main.c.i
+main_single_fd.i: main_single_fd.c.i
 
-.PHONY : main.i
+.PHONY : main_single_fd.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/gnl_Work.dir/build.make CMakeFiles/gnl_Work.dir/main.c.i
-.PHONY : main.c.i
+main_single_fd.c.i:
+	$(MAKE) -f CMakeFiles/gnl_Work.dir/build.make CMakeFiles/gnl_Work.dir/main_single_fd.c.i
+.PHONY : main_single_fd.c.i
 
-main.s: main.c.s
+main_single_fd.s: main_single_fd.c.s
 
-.PHONY : main.s
+.PHONY : main_single_fd.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/gnl_Work.dir/build.make CMakeFiles/gnl_Work.dir/main.c.s
-.PHONY : main.c.s
+main_single_fd.c.s:
+	$(MAKE) -f CMakeFiles/gnl_Work.dir/build.make CMakeFiles/gnl_Work.dir/main_single_fd.c.s
+.PHONY : main_single_fd.c.s
 
 # Help Target
 help:
@@ -1779,9 +1779,9 @@ help:
 	@echo "... libft/ft_toupper.o"
 	@echo "... libft/ft_toupper.i"
 	@echo "... libft/ft_toupper.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... main_single_fd.o"
+	@echo "... main_single_fd.i"
+	@echo "... main_single_fd.s"
 .PHONY : help
 
 

@@ -10,33 +10,40 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <limits.h>
 #include "get_next_line.h"
 
 int	main(int argc, char **argv)
 {
 	char	*line;
-	int		fd;
-	int 	i;
+	int		fd3;
+	int		fd4;
+	int		fd5;
 
-	i = 0;
 	if (argc < 2)
-		return (-1);
-	line = NULL;
-	fd = open(argv[1], O_RDONLY);
-	while (get_next_line(fd, &line))
 	{
-		printf("%s\n", line);
-		free(line);
-		i++;
+		ft_putstr("Error - no arguments\n");
+		return (-1);
 	}
-	printf("{ %i }\n",i);
-
-/*while (i++ < 1)
-{
-	get_next_line(fd, &line);
+	line = NULL;
+	fd3 = open(argv[1], O_RDONLY);
+	fd4 = open(argv[2], O_RDONLY);
+	fd5 = open(argv[3], O_RDONLY);
+	get_next_line(fd3, &line);
 	printf("%s\n", line);
 	free(line);
-}*/
-	close(fd);
+	get_next_line(fd4, &line);
+	printf("%s\n", line);
+	free(line);
+	get_next_line(fd3, &line);
+	printf("%s\n", line);
+	free(line);
+	get_next_line(fd5, &line);
+	printf("%s\n", line);
+	free(line);
+	close(fd3);
+	close(fd4);
+	close(fd5);
+	printf("OPEN_MAX is %d \n", OPEN_MAX);
 	return (0);
 }

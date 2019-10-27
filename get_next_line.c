@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-int	ft_check(char **line, int fd, char *left[MAX_FD_NUM])
+int	ft_check(char **line, int fd, char **left)
 {
 	char *pos;
 	char *tmp;
@@ -25,21 +25,17 @@ int	ft_check(char **line, int fd, char *left[MAX_FD_NUM])
 		pos++;
 		if (*pos == '\0')
 		{
-			free(left[fd]);
-			left[fd] = NULL;
-			free(tmp);
+			ft_strdel(&left[fd]);
+			ft_strdel(&tmp);
 			return (1);
 		}
+		ft_strdel(&left[fd]);
 		left[fd] = ft_strdup(pos);
-		free(tmp);
+		ft_strdel(&tmp);
 		return (1);
 	}
 	else
-		{
-			free(tmp);
-			return (0);
-		}
-
+		return (0);
 }
 
 int	get_next_line(const int fd, char **line)
@@ -61,7 +57,7 @@ int	get_next_line(const int fd, char **line)
 		else
 		{
 			tmp = left[fd];
-			left[fd] = ft_strjoin(left[fd], b);
+			left[fd] = ft_strjoin(tmp, b);
 			free(tmp);
 		}
 		if (ft_check(line, fd, left))
@@ -70,9 +66,9 @@ int	get_next_line(const int fd, char **line)
 	if (left[fd])
 	{
 		*line = ft_strdup(left[fd]);
-		free(left[fd]);
-		left[fd] = NULL;
+		ft_strdel(&left[fd]);
 		return (1);
 	}
+	free(left[fd]);
 	return (0);
 }

@@ -1,26 +1,43 @@
+  
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelphias <aelphias@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/29 12:58:15 by aelphias          #+#    #+#             */
-/*   Updated: 2019/09/29 13:20:11 by aelphias         ###   ########.fr       */
+/*   Created: 2019/09/30 14:39:20 by aelphias          #+#    #+#             */
+/*   Updated: 2019/10/24 14:24:44 by aelphias         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int	main(int argc, char **argv)
 {
-	char	*rslt;
+	char	*line;
+	int		fd;
+	int 	i;
 
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
-	if (!(rslt = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
-		return (NULL);
-	ft_strcpy(rslt, s1);
-	ft_strcat(rslt, s2);
-	return (rslt);
+	i = 0;
+	if (argc < 2)
+		return (-1);
+	line = NULL;
+	fd = open(argv[1], O_RDONLY);
+	while (get_next_line(fd, &line))
+	{
+		printf("%s\n", line);
+		free(line);
+		i++;
+	}
+	printf("{ %i }\n",i);
+
+/*while (i++ < 1)
+{
+	get_next_line(fd, &line);
+	printf("%s\n", line);
+	free(line);
+}*/
+	close(fd);
+	return (0);
 }
