@@ -263,7 +263,7 @@
 		<Unit filename="/Users/aelphias/current_gnl_no_bonus1/libft/libft.h">
 			<Option target="gnl_Work"/>
 		</Unit>
-		<Unit filename="/Users/aelphias/current_gnl_no_bonus1/main.c">
+		<Unit filename="/Users/aelphias/current_gnl_no_bonus1/main_single_fd.c">
 			<Option target="gnl_Work"/>
 		</Unit>
 		<Unit filename="/Users/aelphias/current_gnl_no_bonus1/CMakeLists.txt">

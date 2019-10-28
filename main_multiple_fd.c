@@ -16,9 +16,9 @@
 int	main(int argc, char **argv)
 {
 	char	*line;
-	int		fd1;
-	/*int		fd4;
-	int		fd5;*/
+	int		fd3;
+	int		fd4;
+	int		fd5;
 
 	if (argc < 2)
 	{
@@ -26,8 +26,8 @@ int	main(int argc, char **argv)
 		return (-1);
 	}
 	//line = NULL;
-	fd1 = open(argv[1], O_RDONLY);
-	/*fd4 = open(argv[2], O_RDONLY);
+	fd3 = open(argv[1], O_RDONLY);
+	fd4 = open(argv[2], O_RDONLY);
 	fd5 = open(argv[3], O_RDONLY);
 	get_next_line(fd3, &line);
 	printf("%s\n", line);
@@ -42,10 +42,9 @@ int	main(int argc, char **argv)
 	printf("%s\n", line);
 	free(line);
 	close(fd3);
-	close(fd4);*/
-	/*argc+=0;argv+=0;
-	char *line;
-	int t;
+	close(fd4);
+	/*argc+=0;argv+=0;*/
+	/*int t;
 	int fd = open("textfile", O_RDONLY);
 	t = get_next_line(fd, &line);
 	printf("1) %s | t = %d\n", line, t);
@@ -62,13 +61,13 @@ int	main(int argc, char **argv)
 	t = get_next_line(fd, &line);
 	printf("5) %s | t = %d\n", line, t);
 	ft_strdel(&line);*/
-	while (get_next_line(fd1, &line))
+	/*while (get_next_line(fd1, &line))
 	{
 		printf("%s\n", line);
 		ft_strdel(&line);
 	}
 	ft_strdel(&line);
 	//printf("OPEN_MAX is %d \n", OPEN_MAX);
-	close(fd1);
+	close(fd1);*/
 	return (0);
 }

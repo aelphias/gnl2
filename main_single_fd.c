@@ -31,13 +31,6 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	printf("{ %i }\n",i);
-
-/*while (i++ < 1)
-{
-	get_next_line(fd, &line);
-	printf("%s\n", line);
-	free(line);
-}*/
 	close(fd);
 	return (0);
 }

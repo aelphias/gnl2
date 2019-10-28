@@ -156,7 +156,7 @@ CMakeFiles/gnl_Work.dir/libft/ft_tolower.c.o: ../libft/ft_tolower.c
 
 CMakeFiles/gnl_Work.dir/libft/ft_toupper.c.o: ../libft/ft_toupper.c
 
-CMakeFiles/gnl_Work.dir/main.c.o: ../get_next_line.h
-CMakeFiles/gnl_Work.dir/main.c.o: ../libft/libft.h
-CMakeFiles/gnl_Work.dir/main.c.o: ../main.c
+CMakeFiles/gnl_Work.dir/main_single_fd.c.o: ../get_next_line.h
+CMakeFiles/gnl_Work.dir/main_single_fd.c.o: ../libft/libft.h
+CMakeFiles/gnl_Work.dir/main_single_fd.c.o: ../main_single_fd.c
 

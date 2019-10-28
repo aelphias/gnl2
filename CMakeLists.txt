@@ -65,5 +65,5 @@ add_executable(gnl_Work
 		libft/libft.h
 		libft/Makefile
 		get_next_line.c
-		main.c)
-		#main_single_fd.c
+		#main_multiple_fd.c)
+		main_single_fd.c)

@@ -33,17 +33,12 @@ int	ft_check(char **line, int fd, char **left)
 	return (1);
 }
 
-int	get_next_line(const int fd, char **line)
+int	ft_read_line(char **line, int fd, char **left)
 {
-	static char *left[11000];
-	char		*tmp;
-	char		b[BUFF_SIZE + 1];
 	int			ret;
+	char		b[BUFF_SIZE + 1];
+	char		*tmp;
 
-	if (!line || fd < 0 || fd > 11000 || read(fd, NULL, 0) < 0)
-		return (-1);
-	if (left[fd] && ft_strchr(left[fd], '\n'))
-		return (ft_check(line, fd, left));
 	while ((ret = read(fd, b, BUFF_SIZE)))
 	{
 		b[ret] = '\0';
@@ -58,6 +53,19 @@ int	get_next_line(const int fd, char **line)
 		if (ft_check(line, fd, left))
 			return (1);
 	}
+	return (0);
+}
+
+int	get_next_line(const int fd, char **line)
+{
+	static char *left[11000];
+
+	if (!line || fd < 0 || fd > 11000 || read(fd, NULL, 0) < 0)
+		return (-1);
+	if (left[fd] && ft_strchr(left[fd], '\n'))
+		return (ft_check(line, fd, left));
+	if (ft_read_line(line, fd, left))
+		return (1);
 	if (left[fd])
 	{
 		*line = ft_strdup(left[fd]);
