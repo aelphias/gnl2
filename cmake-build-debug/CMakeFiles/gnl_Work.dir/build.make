@@ -759,18 +759,18 @@ CMakeFiles/gnl_Work.dir/get_next_line.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gnl_Work.dir/get_next_line.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/aelphias/current_gnl_no_bonus1/get_next_line.c -o CMakeFiles/gnl_Work.dir/get_next_line.c.s
 
-CMakeFiles/gnl_Work.dir/main_single_fd.c.o: CMakeFiles/gnl_Work.dir/flags.make
-CMakeFiles/gnl_Work.dir/main_single_fd.c.o: ../main_single_fd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aelphias/current_gnl_no_bonus1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/gnl_Work.dir/main_single_fd.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gnl_Work.dir/main_single_fd.c.o   -c /Users/aelphias/current_gnl_no_bonus1/main_single_fd.c
+CMakeFiles/gnl_Work.dir/main.c.o: CMakeFiles/gnl_Work.dir/flags.make
+CMakeFiles/gnl_Work.dir/main.c.o: ../main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aelphias/current_gnl_no_bonus1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/gnl_Work.dir/main.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/gnl_Work.dir/main.c.o   -c /Users/aelphias/current_gnl_no_bonus1/main.c
 
-CMakeFiles/gnl_Work.dir/main_single_fd.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gnl_Work.dir/main_single_fd.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/aelphias/current_gnl_no_bonus1/main_single_fd.c > CMakeFiles/gnl_Work.dir/main_single_fd.c.i
+CMakeFiles/gnl_Work.dir/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gnl_Work.dir/main.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/aelphias/current_gnl_no_bonus1/main.c > CMakeFiles/gnl_Work.dir/main.c.i
 
-CMakeFiles/gnl_Work.dir/main_single_fd.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gnl_Work.dir/main_single_fd.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/aelphias/current_gnl_no_bonus1/main_single_fd.c -o CMakeFiles/gnl_Work.dir/main_single_fd.c.s
+CMakeFiles/gnl_Work.dir/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gnl_Work.dir/main.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/aelphias/current_gnl_no_bonus1/main.c -o CMakeFiles/gnl_Work.dir/main.c.s
 
 # Object files for target gnl_Work
 gnl_Work_OBJECTS = \
@@ -828,7 +828,7 @@ gnl_Work_OBJECTS = \
 "CMakeFiles/gnl_Work.dir/libft/ft_tolower.c.o" \
 "CMakeFiles/gnl_Work.dir/libft/ft_toupper.c.o" \
 "CMakeFiles/gnl_Work.dir/get_next_line.c.o" \
-"CMakeFiles/gnl_Work.dir/main_single_fd.c.o"
+"CMakeFiles/gnl_Work.dir/main.c.o"
 
 # External object files for target gnl_Work
 gnl_Work_EXTERNAL_OBJECTS =
@@ -887,7 +887,7 @@ gnl_Work: CMakeFiles/gnl_Work.dir/libft/ft_strtrim.c.o
 gnl_Work: CMakeFiles/gnl_Work.dir/libft/ft_tolower.c.o
 gnl_Work: CMakeFiles/gnl_Work.dir/libft/ft_toupper.c.o
 gnl_Work: CMakeFiles/gnl_Work.dir/get_next_line.c.o
-gnl_Work: CMakeFiles/gnl_Work.dir/main_single_fd.c.o
+gnl_Work: CMakeFiles/gnl_Work.dir/main.c.o
 gnl_Work: CMakeFiles/gnl_Work.dir/build.make
 gnl_Work: CMakeFiles/gnl_Work.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/aelphias/current_gnl_no_bonus1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Linking C executable gnl_Work"

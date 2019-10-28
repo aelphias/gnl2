@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
+//#include <limits.h>
 #include "get_next_line.h"
 
 int	main(int argc, char **argv)
@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 		ft_putstr("Error - no arguments\n");
 		return (-1);
 	}
-	line = NULL;
+	//line = NULL;
 	fd1 = open(argv[1], O_RDONLY);
 	/*fd4 = open(argv[2], O_RDONLY);
 	fd5 = open(argv[3], O_RDONLY);
@@ -43,7 +43,6 @@ int	main(int argc, char **argv)
 	free(line);
 	close(fd3);
 	close(fd4);*/
-	printf("OPEN_MAX is %d \n", OPEN_MAX);
 	/*argc+=0;argv+=0;
 	char *line;
 	int t;
@@ -65,12 +64,11 @@ int	main(int argc, char **argv)
 	ft_strdel(&line);*/
 	while (get_next_line(fd1, &line))
 	{
-		get_next_line(fd1, &line);
 		printf("%s\n", line);
 		ft_strdel(&line);
 	}
-
 	ft_strdel(&line);
+	//printf("OPEN_MAX is %d \n", OPEN_MAX);
 	close(fd1);
 	return (0);
 }

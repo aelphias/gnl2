@@ -58,7 +58,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/aelphias/current_gnl_no_bonus1/libft/ft_strtrim.c" "/Users/aelphias/current_gnl_no_bonus1/cmake-build-debug/CMakeFiles/gnl_Work.dir/libft/ft_strtrim.c.o"
   "/Users/aelphias/current_gnl_no_bonus1/libft/ft_tolower.c" "/Users/aelphias/current_gnl_no_bonus1/cmake-build-debug/CMakeFiles/gnl_Work.dir/libft/ft_tolower.c.o"
   "/Users/aelphias/current_gnl_no_bonus1/libft/ft_toupper.c" "/Users/aelphias/current_gnl_no_bonus1/cmake-build-debug/CMakeFiles/gnl_Work.dir/libft/ft_toupper.c.o"
-  "/Users/aelphias/current_gnl_no_bonus1/main_single_fd.c" "/Users/aelphias/current_gnl_no_bonus1/cmake-build-debug/CMakeFiles/gnl_Work.dir/main_single_fd.c.o"
+  "/Users/aelphias/current_gnl_no_bonus1/main.c" "/Users/aelphias/current_gnl_no_bonus1/cmake-build-debug/CMakeFiles/gnl_Work.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

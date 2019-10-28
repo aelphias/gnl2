@@ -12,16 +12,26 @@
 
 #include "get_next_line.h"
 
+int	ft_final_check(char **line, int fd, char **left)
+{
+	if (left[fd])
+	{
+		*line = ft_strdup(left[fd]);
+		ft_strdel(&(left[fd]));
+		return (1);
+	}
+}
+
 int	ft_check(char **line, int fd, char **left)
 {
 	char *pos;
 	char *tmp;
 
-	if (!(pos = ft_strchr(left[fd], '\n')))
+	if (!(pos = ft_strchr(left[fd],'\n')))
 		return (0);
 	tmp = left[fd];
 	*pos = '\0';
-	*line = ft_strdup(tmp);
+	*line = ft_strdup(left[fd]); /*THE LEAK IS HERE !!!*/
 	pos++;
 	if (*pos == '\0')
 	{
@@ -35,7 +45,7 @@ int	ft_check(char **line, int fd, char **left)
 
 int	get_next_line(const int fd, char **line)
 {
-	static char *left[11000];
+	static char *left[12345];
 	char		*tmp;
 	char		b[BUFF_SIZE + 1];
 	int			ret;
@@ -58,11 +68,7 @@ int	get_next_line(const int fd, char **line)
 		if (ft_check(line, fd, left))
 			return (1);
 	}
-	if (left[fd])
-	{
-		*line = ft_strdup(left[fd]);
-		ft_strdel(&(left[fd]));
+	if (ft_final_check(line, fd, left))
 		return (1);
-	}
 	return (0);
 }

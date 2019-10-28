@@ -53,7 +53,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/gnl_Work.dir/libft/ft_tolower.c.o"
   "CMakeFiles/gnl_Work.dir/libft/ft_toupper.c.o"
   "CMakeFiles/gnl_Work.dir/get_next_line.c.o"
-  "CMakeFiles/gnl_Work.dir/main_single_fd.c.o"
+  "CMakeFiles/gnl_Work.dir/main.c.o"
   "gnl_Work.pdb"
   "gnl_Work"
 )
