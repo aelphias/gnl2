@@ -17,30 +17,25 @@ int	ft_check(char **line, int fd, char **left)
 	char *pos;
 	char *tmp;
 
-	tmp = ft_strdup(left[fd]);
-	if ((pos = ft_strchr(tmp, '\n')))
+	if (!(pos = ft_strchr(left[fd],'\n')))
+		return (0);
+	tmp = left[fd];
+	*pos = '\0';
+	*line = ft_strdup(left[fd]); //THE LEAK IS HERE !!!
+	pos++;
+	if (*pos == '\0')
 	{
-		*pos = '\0';
-		*line = ft_strdup(tmp);
-		pos++;
-		if (*pos == '\0')
-		{
-			ft_strdel(&left[fd]);
-			ft_strdel(&tmp);
-			return (1);
-		}
 		ft_strdel(&left[fd]);
-		left[fd] = ft_strdup(pos);
-		ft_strdel(&tmp);
 		return (1);
 	}
-	else
-		return (0);
+	left[fd] = ft_strdup(pos);
+	ft_strdel(&tmp);
+	return (1);
 }
 
 int	get_next_line(const int fd, char **line)
 {
-	static char *left[MAX_FD_NUM];
+	static char *left[12345];
 	char		*tmp;
 	char		b[BUFF_SIZE + 1];
 	int			ret;
@@ -52,13 +47,13 @@ int	get_next_line(const int fd, char **line)
 	while ((ret = read(fd, b, BUFF_SIZE)))
 	{
 		b[ret] = '\0';
-		if (left[fd] == NULL)
+		if (!left[fd])
 			left[fd] = ft_strdup(b);
 		else
 		{
 			tmp = left[fd];
 			left[fd] = ft_strjoin(tmp, b);
-			free(tmp);
+			ft_strdel(&tmp);
 		}
 		if (ft_check(line, fd, left))
 			return (1);
@@ -66,9 +61,9 @@ int	get_next_line(const int fd, char **line)
 	if (left[fd])
 	{
 		*line = ft_strdup(left[fd]);
-		ft_strdel(&left[fd]);
+		ft_strdel(&(left[fd]));
 		return (1);
 	}
-	free(left[fd]);
+	//free(left[fd]);
 	return (0);
 }
